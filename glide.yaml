@@ -1,6 +1,0 @@
-package: github.com/OrderMyGear/tax-service/vendor/github.com/MDrollette/taxjar-go
-import:
-- package: github.com/MDrollette/taxjar-go
-- package: github.com/google/go-querystring
-  subpackages:
-  - query
