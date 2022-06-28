@@ -19,7 +19,19 @@ func main() {
 	// }
 	// fmt.Printf("%+v\n", rate)
 
-	taxes, err := c.Taxes.Calculate("2211 Commerce St.", "Dallas", "TX", "75201", "US", "TX", "75206", "US", 100.00, 10.00)
+	from := taxjar.Address{
+		Street:  "2211 Commerce St.",
+		City:    "Dallas",
+		State:   "TX",
+		Zip:     "75201",
+		Country: "US",
+	}
+	to := taxjar.Address{
+		State:   "TX",
+		Zip:     "75206",
+		Country: "US",
+	}
+	taxes, err := c.Taxes.Calculate(from, to, 10.00, 100.00)
 	if nil != err {
 		fmt.Println(err)
 		os.Exit(1)
